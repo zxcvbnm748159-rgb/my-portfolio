@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>กิตติธัช ปัจพิบูลย์ | Resume & Portfolio</title>
+<meta name="description" content="ประวัติและผลงานของ นาย กิตติธัช ปัจพิบูลย์ สำหรับการสมัครงานด้านพัฒนา Web Application">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--accent2:#818cf8;--line:#334155}
+@media (prefers-color-scheme: light){:root{--bg:#f8fafc;--card:#fff;--text:#0f172a;--muted:#475569;--accent:#0284c7;--accent2:#4f46e5;--line:#e2e8f0}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Prompt',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-weight:700}
+nav ul{display:flex;gap:20px;list-style:none;font-size:.95rem}
+nav ul a{color:var(--muted)}nav ul a:hover{color:var(--accent)}
+.hero{padding:90px 0 70px;text-align:center}
+.avatar{width:110px;height:110px;border-radius:50%;margin:0 auto 22px;display:grid;place-items:center;font-size:2.6rem;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.3}
+.hero .role{color:var(--accent);font-size:1.2rem;margin:8px 0 14px}
+.hero p{color:var(--muted);max-width:620px;margin:0 auto 26px}
+.btn{display:inline-block;padding:10px 24px;border-radius:999px;font-weight:600;margin:4px;border:1px solid var(--accent)}
+.btn.primary{background:var(--accent);color:#fff}
+section{padding:60px 0;border-top:1px solid var(--line)}
+h2{font-size:1.6rem;margin-bottom:26px}
+h2::after{content:"";display:block;width:50px;height:4px;border-radius:2px;margin-top:6px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.info dt{color:var(--muted);font-size:.85rem}.info dd{margin-bottom:12px;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tag{font-size:.8rem;padding:3px 12px;border-radius:999px;background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent)}
+.proj h3{font-size:1.2rem;margin-bottom:6px}
+.proj p,.proj li{color:var(--muted);font-size:.95rem}
+.proj ul{padding-left:20px;margin:10px 0 16px}
+.bar{margin-bottom:14px}
+.bar div:first-child{display:flex;justify-content:space-between;font-size:.9rem}
+.track{height:8px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:4px}
+.fill{height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1.2s ease}
+footer{text-align:center;padding:36px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media(max-width:600px){nav ul{gap:12px;font-size:.85rem}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>KP.</b>
+<ul><li><a href="#about">ประวัติ</a></li><li><a href="#skills">ทักษะ</a></li><li><a href="#projects">ผลงาน</a></li><li><a href="#contact">ติดต่อ</a></li></ul></div></nav>
+
+<header class="hero"><div class="wrap">
+<div class="avatar">ก</div>
+<h1>นาย กิตติธัช ปัจพิบูลย์</h1>
+<div class="role">Web Application Developer</div>
+<p>ผู้พัฒนาเว็บแอปพลิเคชันที่สนใจนำ Computer Vision และระบบหน้าเว็บมาใช้แก้ปัญหาจริง พร้อมเรียนรู้และเติบโตไปกับทีม</p>
+<a class="btn primary" href="#projects">ดูผลงาน</a>
+<a class="btn" href="https://github.com/zxcvbnm748159-rgb" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/kittitut-puhpiboon-b56b5a43b" target="_blank" rel="noopener">LinkedIn</a>
+</div></header>
+
+<section id="about"><div class="wrap">
+<h2>ข้อมูลส่วนตัว</h2>
+<div class="grid">
+<div class="card"><dl class="info">
+<dt>ชื่อ-นามสกุล</dt><dd>นาย กิตติธัช ปัจพิบูลย์</dd>
+<dt>วัน/เดือน/ปีเกิด</dt><dd>1 ธันวาคม 2548</dd>
+<dt>อายุ</dt><dd id="age">-</dd>
+<dt>ตำแหน่งที่สนใจ</dt><dd>Web Developer / Front-end Developer / Python Developer</dd>
+</dl></div>
+<div class="card"><h3 style="margin-bottom:10px">เกี่ยวกับฉัน</h3>
+<p style="color:var(--muted)">ฉันมีประสบการณ์สร้างเว็บตั้งแต่หน้า UI ไปจนถึงระบบหลังบ้านเบื้องต้นด้วย Flask และมีผลงานที่เผยแพร่บน GitHub ทั้งเว็บตรวจจับวัตถุแบบ Real-time และเว็บตลาดซื้อขายอะไหล่หายาก</p></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<h2>ทักษะ</h2>
+<div class="grid">
+<div class="card">
+<div class="bar"><div><span>HTML5 / CSS3</span><span>85%</span></div><div class="track"><div class="fill" data-w="85"></div></div></div>
+<div class="bar"><div><span>JavaScript</span><span>75%</span></div><div class="track"><div class="fill" data-w="75"></div></div></div>
+<div class="bar"><div><span>Python / Flask</span><span>70%</span></div><div class="track"><div class="fill" data-w="70"></div></div></div>
+<div class="bar"><div><span>OpenCV</span><span>65%</span></div><div class="track"><div class="fill" data-w="65"></div></div></div>
+<div class="bar"><div><span>Git / GitHub</span><span>70%</span></div><div class="track"><div class="fill" data-w="70"></div></div></div>
+</div>
+<div class="card"><h3>เครื่องมือและเทคโนโลยี</h3>
+<div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">OpenCV</span><span class="tag">NumPy</span><span class="tag">localStorage</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Responsive Design</span></div>
+<p style="color:var(--muted);font-size:.9rem">*เปอร์เซ็นต์เป็นการประเมินตนเอง ปรับแก้ได้ตามจริง</p></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<h2>ผลงาน</h2>
+<div class="grid">
+<article class="card proj">
+<h3>🥭 Mango Detector</h3>
+<div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">OpenCV</span><span class="tag">HTML</span></div>
+<p>เว็บแอปตรวจจับมะม่วงแบบ Real-time ผ่านกล้อง</p>
+<ul><li>ใช้ OpenCV แปลงภาพเป็น HSV เพื่อแยกสีมะม่วงดิบ/สุก</li><li>วาดกรอบและป้ายชื่อบนภาพจากวิดีโอสตรีม</li><li>ส่งภาพสดไปแสดงบนหน้าเว็บด้วย Flask</li></ul>
+<a href="https://github.com/zxcvbnm748159-rgb/mango-detector" target="_blank" rel="noopener">ดูโค้ดบน GitHub →</a>
+</article>
+<article class="card proj">
+<h3>🔧 RarePart Finder</h3>
+<div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">localStorage</span></div>
+<p>เว็บค้นหาและซื้อขายอะไหล่หายากสำหรับรถ</p>
+<ul><li>มีหน้า หน้าแรก, สมัครสมาชิก, เข้าสู่ระบบ, โปรไฟล์</li><li>มีหน้าลงขายสินค้าและหน้าชำระเงิน (Checkout)</li><li>จัดเก็บข้อมูลฝั่งผู้ใช้ด้วย localStorage</li></ul>
+<a href="https://github.com/zxcvbnm748159-rgb/RarePart-Finder" target="_blank" rel="noopener">ดูโค้ดบน GitHub →</a>
+</article>
+</div></div></section>
+
+<section id="contact"><div class="wrap">
+<h2>ติดต่อ</h2>
+<div class="card"><p style="color:var(--muted);margin-bottom:12px">สนใจร่วมงานหรืออยากดูผลงานเพิ่มเติม ติดต่อได้ทาง LinkedIn หรือเข้าชมโค้ดที่ GitHub</p>
+<a class="btn primary" href="https://www.linkedin.com/in/kittitut-puhpiboon-b56b5a43b" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/zxcvbnm748159-rgb" target="_blank" rel="noopener">GitHub</a></div>
+</div></section>
+
+<footer>© <span id="yr"></span> กิตติธัช ปัจพิบูลย์</footer>
+
+<script>
+(function(){
+  var b=new Date(2005,11,1),n=new Date(),a=n.getFullYear()-b.getFullYear();
+  if(n<new Date(n.getFullYear(),11,1))a--;
+  document.getElementById('age').textContent=a+' ปี';
+  document.getElementById('yr').textContent=n.getFullYear();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';io.unobserve(e.target);}
+  });},{threshold:.4});
+  document.querySelectorAll('.fill').forEach(function(f){io.observe(f);});
+})();
+</script>
+</body>
+</html>
