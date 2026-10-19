@@ -3,129 +3,568 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>กิตติธัช ปัจพิบูลย์ | Resume & Portfolio</title>
-<meta name="description" content="ประวัติและผลงานของ นาย กิตติธัช ปัจพิบูลย์ สำหรับการสมัครงานด้านพัฒนา Web Application">
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>กิตติธัช ปัจพิบูลย์ | Web Developer & Computer Vision Portfolio</title>
+<meta name="description" content="ประวัติและผลงานของ นาย กิตติธัช ปัจพิบูลย์ สำหรับการสมัครงานด้านพัฒนา Web Application และ Computer Vision">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-:root{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--accent2:#818cf8;--line:#334155}
-@media (prefers-color-scheme: light){:root{--bg:#f8fafc;--card:#fff;--text:#0f172a;--muted:#475569;--accent:#0284c7;--accent2:#4f46e5;--line:#e2e8f0}}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Prompt',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-a{color:var(--accent);text-decoration:none}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
-nav b{font-weight:700}
-nav ul{display:flex;gap:20px;list-style:none;font-size:.95rem}
-nav ul a{color:var(--muted)}nav ul a:hover{color:var(--accent)}
-.hero{padding:90px 0 70px;text-align:center}
-.avatar{width:110px;height:110px;border-radius:50%;margin:0 auto 22px;display:grid;place-items:center;font-size:2.6rem;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}
-.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.3}
-.hero .role{color:var(--accent);font-size:1.2rem;margin:8px 0 14px}
-.hero p{color:var(--muted);max-width:620px;margin:0 auto 26px}
-.btn{display:inline-block;padding:10px 24px;border-radius:999px;font-weight:600;margin:4px;border:1px solid var(--accent)}
-.btn.primary{background:var(--accent);color:#fff}
-section{padding:60px 0;border-top:1px solid var(--line)}
-h2{font-size:1.6rem;margin-bottom:26px}
-h2::after{content:"";display:block;width:50px;height:4px;border-radius:2px;margin-top:6px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
-.info dt{color:var(--muted);font-size:.85rem}.info dd{margin-bottom:12px;font-weight:600}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.tag{font-size:.8rem;padding:3px 12px;border-radius:999px;background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent)}
-.proj h3{font-size:1.2rem;margin-bottom:6px}
-.proj p,.proj li{color:var(--muted);font-size:.95rem}
-.proj ul{padding-left:20px;margin:10px 0 16px}
-.bar{margin-bottom:14px}
-.bar div:first-child{display:flex;justify-content:space-between;font-size:.9rem}
-.track{height:8px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:4px}
-.fill{height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1.2s ease}
-footer{text-align:center;padding:36px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
-@media(max-width:600px){nav ul{gap:12px;font-size:.85rem}}
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-hover: #0284c7;
+  --accent2: #818cf8;
+  --line: #334155;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --toast-bg: #1e293b;
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+  --accent2: #4f46e5;
+  --line: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --toast-bg: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Prompt', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background-color 0.3s, color 0.3s;
+}
+a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent2); }
+.wrap { max-width: 1050px; margin: 0 auto; padding: 0 20px; }
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+nav .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+}
+.brand { font-size: 1.3rem; font-weight: 700; color: var(--text); }
+.brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 24px; list-style: none; font-size: 0.95rem; align-items: center; }
+.nav-links a { color: var(--muted); font-weight: 500; }
+.nav-links a:hover { color: var(--accent); }
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.theme-toggle:hover { background: color-mix(in srgb, var(--accent) 15%, transparent); }
+
+/* Hero Section */
+.hero { padding: 90px 0 70px; text-align: center; }
+.avatar-container { position: relative; width: 120px; height: 120px; margin: 0 auto 24px; }
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 10px 25px -5px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.status-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: #10b981;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+}
+.hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.2; }
+.hero .role {
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 10px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.hero p { color: var(--muted); max-width: 650px; margin: 0 auto 28px; font-size: 1.05rem; }
+.btn-group { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover { border-color: var(--accent); transform: translateY(-2px); }
+.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn.primary:hover { background: var(--accent-hover); }
+
+/* Sections General */
+section { padding: 65px 0; border-top: 1px solid var(--line); }
+h2 { font-size: 1.7rem; margin-bottom: 28px; position: relative; }
+h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  border-radius: 2px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.card:hover { border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+
+/* About Section */
+.info-list { list-style: none; }
+.info-list li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+.info-list li:last-child { border-bottom: none; }
+.info-list span.label { color: var(--muted); font-size: 0.9rem; }
+.info-list span.val { font-weight: 600; }
+
+/* Skills Section */
+.bar { margin-bottom: 18px; }
+.bar-header { display: flex; justify-content: space-between; font-size: 0.95rem; font-weight: 500; margin-bottom: 6px; }
+.track { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.fill { height: 100%; width: 0; border-radius: 4px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.tag {
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+  font-weight: 500;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* Projects Section */
+.filter-btns { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+.filter-btn {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.filter-btn.active, .filter-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.proj-card { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.proj-header { margin-bottom: 12px; }
+.proj-title { font-size: 1.3rem; margin-bottom: 6px; display: flex; align-items: center; justify-content: space-between; }
+.proj-desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; }
+.proj-features { list-style: none; padding-left: 0; margin-bottom: 20px; font-size: 0.9rem; color: var(--muted); }
+.proj-features li { position: relative; padding-left: 18px; margin-bottom: 6px; }
+.proj-features li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+.proj-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.9rem; }
+
+/* Contact Form */
+.contact-grid { display: grid; gap: 24px; grid-template-columns: 1fr 1.2fr; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 50%, var(--card));
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-control:focus { border-color: var(--accent); }
+textarea.form-control { resize: vertical; min-height: 100px; }
+
+/* Toast Notification */
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: var(--toast-bg);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 30px;
+  right: 30px;
+  box-shadow: 0 10px 25px var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+@keyframes fadein { from { bottom: 0; opacity: 0; } to { bottom: 30px; opacity: 1; } }
+@keyframes fadeout { from { bottom: 30px; opacity: 1; } to { bottom: 0; opacity: 0; } }
+
+footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { gap: 14px; font-size: 0.85rem; }
+}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>KP.</b>
-<ul><li><a href="#about">ประวัติ</a></li><li><a href="#skills">ทักษะ</a></li><li><a href="#projects">ผลงาน</a></li><li><a href="#contact">ติดต่อ</a></li></ul></div></nav>
 
-<header class="hero"><div class="wrap">
-<div class="avatar">ก</div>
-<h1>นาย กิตติธัช ปัจพิบูลย์</h1>
-<div class="role">Web Application Developer</div>
-<p>ผู้พัฒนาเว็บแอปพลิเคชันที่สนใจนำ Computer Vision และระบบหน้าเว็บมาใช้แก้ปัญหาจริง พร้อมเรียนรู้และเติบโตไปกับทีม</p>
-<a class="btn primary" href="#projects">ดูผลงาน</a>
-<a class="btn" href="https://github.com/zxcvbnm748159-rgb" target="_blank" rel="noopener">GitHub</a>
-<a class="btn" href="https://www.linkedin.com/in/kittitut-puhpiboon-b56b5a43b" target="_blank" rel="noopener">LinkedIn</a>
-</div></header>
+<!-- Navigation -->
+<nav>
+  <div class="wrap">
+    <a href="#" class="brand">กิตติธัช <span>.KP</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">ประวัติ</a></li>
+      <li><a href="#skills">ทักษะ</a></li>
+      <li><a href="#projects">ผลงาน</a></li>
+      <li><a href="#contact">ติดต่อ</a></li>
+      <li>
+        <button class="theme-toggle" id="themeBtn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i> <span id="themeText">Muted</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<section id="about"><div class="wrap">
-<h2>ข้อมูลส่วนตัว</h2>
-<div class="grid">
-<div class="card"><dl class="info">
-<dt>ชื่อ-นามสกุล</dt><dd>นาย กิตติธัช ปัจพิบูลย์</dd>
-<dt>วัน/เดือน/ปีเกิด</dt><dd>1 ธันวาคม 2548</dd>
-<dt>อายุ</dt><dd id="age">-</dd>
-<dt>ตำแหน่งที่สนใจ</dt><dd>Web Developer / Front-end Developer / Python Developer</dd>
-</dl></div>
-<div class="card"><h3 style="margin-bottom:10px">เกี่ยวกับฉัน</h3>
-<p style="color:var(--muted)">ฉันมีประสบการณ์สร้างเว็บตั้งแต่หน้า UI ไปจนถึงระบบหลังบ้านเบื้องต้นด้วย Flask และมีผลงานที่เผยแพร่บน GitHub ทั้งเว็บตรวจจับวัตถุแบบ Real-time และเว็บตลาดซื้อขายอะไหล่หายาก</p></div>
-</div></div></section>
+<!-- Hero Section -->
+<header class="hero">
+  <div class="wrap">
+    <div class="avatar-container">
+      <div class="avatar">ก</div>
+      <div class="status-badge" title="พร้อมเริ่มงานทันที"></div>
+    </div>
+    <h1>นาย กิตติธัช ปัจพิบูลย์</h1>
+    <div class="role"><i class="fa-solid fa-code"></i> Computer Engineering Student & Developer</div>
+    <p>มุ่งมั่นพัฒนา Web Application ที่ตอบโจทย์การใช้งานจริง สนใจการประยุกต์ใช้ Computer Vision, Machine Learning และระบบหลังบ้านเพื่อสร้างโซลูชันที่มีประสิทธิภาพ</p>
+    <div class="btn-group">
+      <a class="btn primary" href="#projects"><i class="fa-solid fa-briefcase"></i> ดูผลงาน</a>
+      <a class="btn" href="https://github.com/zxcvbnm748159-rgb" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/kittitut-puhpiboon-b56b5a43b" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </div>
+</header>
 
-<section id="skills"><div class="wrap">
-<h2>ทักษะ</h2>
-<div class="grid">
-<div class="card">
-<div class="bar"><div><span>HTML5 / CSS3</span><span>85%</span></div><div class="track"><div class="fill" data-w="85"></div></div></div>
-<div class="bar"><div><span>JavaScript</span><span>75%</span></div><div class="track"><div class="fill" data-w="75"></div></div></div>
-<div class="bar"><div><span>Python / Flask</span><span>70%</span></div><div class="track"><div class="fill" data-w="70"></div></div></div>
-<div class="bar"><div><span>OpenCV</span><span>65%</span></div><div class="track"><div class="fill" data-w="65"></div></div></div>
-<div class="bar"><div><span>Git / GitHub</span><span>70%</span></div><div class="track"><div class="fill" data-w="70"></div></div></div>
-</div>
-<div class="card"><h3>เครื่องมือและเทคโนโลยี</h3>
-<div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">OpenCV</span><span class="tag">NumPy</span><span class="tag">localStorage</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Responsive Design</span></div>
-<p style="color:var(--muted);font-size:.9rem">*เปอร์เซ็นต์เป็นการประเมินตนเอง ปรับแก้ได้ตามจริง</p></div>
-</div></div></section>
+<!-- About Section -->
+<section id="about">
+  <div class="wrap">
+    <h2>ข้อมูลส่วนตัว & การศึกษา</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 style="margin-bottom:16px"><i class="fa-regular fa-id-card"></i> ประวัติส่วนตัว</h3>
+        <ul class="info-list">
+          <li><span class="label">ชื่อ-นามสกุล:</span> <span class="val">นาย กิตติธัช ปัจพิบูลย์</span></li>
+          <li><span class="label">วันเกิด:</span> <span class="val">1 ธันวาคม 2548</span></li>
+          <li><span class="label">อายุ:</span> <span class="val" id="age">-</span></li>
+          <li><span class="label">สาขาวิชา:</span> <span class="val">วิศวกรรมคอมพิวเตอร์ (CPE)</span></li>
+          <li><span class="label">ตำแหน่งที่สนใจ:</span> <span class="val">Web / Software Developer</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:14px"><i class="fa-solid fa-user-gear"></i> เกี่ยวกับฉัน</h3>
+        <p style="color:var(--muted); margin-bottom:14px;">
+          มีความเชี่ยวชาญในการพัฒนาซอฟต์แวร์ทั้งฝั่ง Frontend และการเชื่อมต่อ API / Database มีประสบการณ์สร้างแอปพลิเคชันตรวจจับวัตถุแบบ Real-time และระบบเว็บแอปพลิเคชันการซื้อขายอะไหล่
+        </p>
+        <p style="color:var(--muted)">
+          พร้อมเรียนรู้เทคโนโลยีใหม่ๆ ทำงานร่วมกับทีม และนำทักษะด้าน Computer Engineering มาประยุกต์ใช้เพื่อแก้ปัญหาในองค์กรอย่างมุ่งมั่น
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="projects"><div class="wrap">
-<h2>ผลงาน</h2>
-<div class="grid">
-<article class="card proj">
-<h3>🥭 Mango Detector</h3>
-<div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">OpenCV</span><span class="tag">HTML</span></div>
-<p>เว็บแอปตรวจจับมะม่วงแบบ Real-time ผ่านกล้อง</p>
-<ul><li>ใช้ OpenCV แปลงภาพเป็น HSV เพื่อแยกสีมะม่วงดิบ/สุก</li><li>วาดกรอบและป้ายชื่อบนภาพจากวิดีโอสตรีม</li><li>ส่งภาพสดไปแสดงบนหน้าเว็บด้วย Flask</li></ul>
-<a href="https://github.com/zxcvbnm748159-rgb/mango-detector" target="_blank" rel="noopener">ดูโค้ดบน GitHub →</a>
-</article>
-<article class="card proj">
-<h3>🔧 RarePart Finder</h3>
-<div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">localStorage</span></div>
-<p>เว็บค้นหาและซื้อขายอะไหล่หายากสำหรับรถ</p>
-<ul><li>มีหน้า หน้าแรก, สมัครสมาชิก, เข้าสู่ระบบ, โปรไฟล์</li><li>มีหน้าลงขายสินค้าและหน้าชำระเงิน (Checkout)</li><li>จัดเก็บข้อมูลฝั่งผู้ใช้ด้วย localStorage</li></ul>
-<a href="https://github.com/zxcvbnm748159-rgb/RarePart-Finder" target="_blank" rel="noopener">ดูโค้ดบน GitHub →</a>
-</article>
-</div></div></section>
+<!-- Skills Section -->
+<section id="skills">
+  <div class="wrap">
+    <h2>ทักษะความสามารถ</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-layer-group"></i> ทักษะโปรแกรมมิ่ง</h3>
+        <div class="bar">
+          <div class="bar-header"><span>HTML5 / CSS3 / JavaScript</span><span>85%</span></div>
+          <div class="track"><div class="fill" data-w="85"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-header"><span>Python / Flask</span><span>75%</span></div>
+          <div class="track"><div class="fill" data-w="75"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-header"><span>OpenCV / Computer Vision</span><span>70%</span></div>
+          <div class="track"><div class="fill" data-w="70"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-header"><span>Git & GitHub Workflow</span><span>75%</span></div>
+          <div class="track"><div class="fill" data-w="75"></div></div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3 style="margin-bottom: 14px;"><i class="fa-solid fa-screwdriver-wrench"></i> เครื่องมือ & เทคโนโลยี</h3>
+        <div class="tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript (ES6+)</span>
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">localStorage</span>
+          <span class="tag">REST API</span>
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Responsive Web</span>
+        </div>
+        <p style="color:var(--muted); font-size:0.88rem; margin-top: 18px;">
+          * การประเมินตนเองตามประสบการณ์การพัฒนาโปรเจกต์จริง
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="contact"><div class="wrap">
-<h2>ติดต่อ</h2>
-<div class="card"><p style="color:var(--muted);margin-bottom:12px">สนใจร่วมงานหรืออยากดูผลงานเพิ่มเติม ติดต่อได้ทาง LinkedIn หรือเข้าชมโค้ดที่ GitHub</p>
-<a class="btn primary" href="https://www.linkedin.com/in/kittitut-puhpiboon-b56b5a43b" target="_blank" rel="noopener">LinkedIn</a>
-<a class="btn" href="https://github.com/zxcvbnm748159-rgb" target="_blank" rel="noopener">GitHub</a></div>
-</div></section>
+<!-- Projects Section -->
+<section id="projects">
+  <div class="wrap">
+    <h2>ผลงานโปรเจกต์</h2>
+    <div class="filter-btns">
+      <button class="filter-btn active" onclick="filterProj('all')">ทั้งหมด</button>
+      <button class="filter-btn" onclick="filterProj('vision')">Computer Vision</button>
+      <button class="filter-btn" onclick="filterProj('web')">Web Application</button>
+    </div>
 
-<footer>© <span id="yr"></span> กิตติธัช ปัจพิบูลย์</footer>
+    <div class="grid">
+      <!-- Project 1 -->
+      <article class="card proj-card" data-cat="vision">
+        <div>
+          <div class="proj-header">
+            <div class="proj-title">🥭 Mango Detector <i class="fa-solid fa-eye" style="color:var(--accent); font-size:1rem;"></i></div>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+          </div>
+          <p class="proj-desc">ระบบตรวจจับและจำแนกความสุกของมะม่วงแบบ Real-time ผ่านกล้องวิดีโอ</p>
+          <ul class="proj-features">
+            <li>แปลงระบบสีเป็น HSV Space เพื่อกรองและแยกสีมะม่วงดิบ/สุก</li><li>ประมวลผลการหาขอบเขต (Contours) และสร้าง Bounding Box</li><li>สตรีมภาพวิดีโอสดผ่าน Flask Web Server แสดงผลบนเบราว์เซอร์</li>
+          </ul>
+        </div>
+        <div>
+          <a class="proj-link" href="https://github.com/zxcvbnm748159-rgb/mango-detector.git" target="_blank" rel="noopener">
+            ดูซอร์สโค้ดบน GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card proj-card" data-cat="web">
+        <div>
+          <div class="proj-header">
+            <div class="proj-title">🔧 RarePart Finder <i class="fa-solid fa-gears" style="color:var(--accent); font-size:1rem;"></i></div>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">localStorage</span>
+            </div>
+          </div>
+          <p class="proj-desc">เว็บแอปพลิเคชันค้นหาและคลังข้อมูลซื้อขายอะไหล่หายาก</p>
+          <ul class="proj-features">
+            <li>ระบบค้นหาอะไหล่ กรองตามประเภท และรหัสสินค้า</li><li>ระบบลงขายสินค้า ฟอร์มชำระเงิน (Checkout) และจัดการโปรไฟล์</li><li>บริหารจัดการข้อมูลจำลองฝั่ง Client-side ด้วย Browser LocalStorage</li>
+          </ul>
+        </div>
+        <div>
+          <a class="proj-link" href="https://github.com/zxcvbnm748159-rgb/RarePart-Finder.git" target="_blank" rel="noopener">
+            ดูซอร์สโค้ดบน GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="wrap">
+    <h2>ช่องทางการติดต่อ</h2>
+    <div class="contact-grid">
+      <div class="card">
+        <h3 style="margin-bottom:14px;"><i class="fa-solid fa-envelope"></i> ส่งข้อความถึงฉัน</h3>
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-group">
+            <label for="name">ชื่อของคุณ</label>
+            <input type="text" id="name" class="form-control" placeholder="ชื่อ-นามสกุล" required>
+          </div>
+          <div class="form-group">
+            <label for="email">อีเมล</label>
+            <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="msg">ข้อความ</label>
+            <textarea id="msg" class="form-control" placeholder="พิมพ์ข้อความที่ต้องการติดต่อ..." required></textarea>
+          </div>
+          <button type="submit" class="btn primary" style="width:100%; justify-content:center;">
+            <i class="fa-solid fa-paper-plane"></i> ส่งข้อความ
+          </button>
+        </form>
+      </div>
+
+      <div class="card" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <h3 style="margin-bottom:14px;"><i class="fa-solid fa-address-book"></i> ช่องทางเพิ่มเติม</h3>
+          <p style="color:var(--muted); margin-bottom: 20px;">
+            ยินดีต้อนรับสำหรับโอกาสในการทำงาน การฝึกงาน หรือพูดคุยแลกเปลี่ยนด้านเทคโนโลยีครับ
+          </p>
+          <ul class="info-list" style="margin-bottom:20px;">
+            <li><span class="label"><i class="fa-brands fa-github"></i> GitHub:</span> <a href="https://github.com/zxcvbnm748159-rgb" target="_blank">zxcvbnm748159-rgb</a></li>
+            <li><span class="label"><i class="fa-brands fa-linkedin"></i> LinkedIn:</span> <a href="https://www.linkedin.com/in/kittitut-puhpiboon-b56b5a43b" target="_blank">Kittitut Puhpiboon</a></li>
+          </ul>
+        </div>
+        <div style="background:color-mix(in srgb, var(--accent) 10%, transparent); padding:16px; border-radius:12px; border:1px solid color-mix(in srgb, var(--accent) 20%, transparent);">
+          <i class="fa-solid fa-circle-check" style="color:var(--accent);"></i> <strong>Status:</strong> พร้อมรับข้อเสนอและโอกาสในการร่วมงาน
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Toast Notification -->
+<div id="toast"><i class="fa-solid fa-circle-check" style="color:#10b981; font-size:1.2rem;"></i> <span id="toastMsg">ส่งข้อความเรียบร้อยแล้ว!</span></div>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> กิตติธัช ปัจพิบูลย์ (Kittithat Patpiboon) — Web & Computer Vision Portfolio
+  </div>
+</footer>
 
 <script>
-(function(){
-  var b=new Date(2005,11,1),n=new Date(),a=n.getFullYear()-b.getFullYear();
-  if(n<new Date(n.getFullYear(),11,1))a--;
-  document.getElementById('age').textContent=a+' ปี';
-  document.getElementById('yr').textContent=n.getFullYear();
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';io.unobserve(e.target);}
-  });},{threshold:.4});
-  document.querySelectorAll('.fill').forEach(function(f){io.observe(f);});
+(function() {
+  // คำนวณอายุอัตโนมัติจาก วันเกิด 1 ธันวาคม 2548 (2005)
+  var b = new Date(2005, 11, 1);
+  var n = new Date();
+  var age = n.getFullYear() - b.getFullYear();
+  if (n < new Date(n.getFullYear(), 11, 1)) age--;
+  document.getElementById('age').textContent = age + ' ปี';
+  document.getElementById('yr').textContent = n.getFullYear();
+
+  // Theme Toggle Dark/Light Mode
+  var themeBtn = document.getElementById('themeBtn');
+  var themeText = document.getElementById('themeText');
+  var currentTheme = localStorage.getItem('theme') || 'dark';
+
+  function setTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i> <span>Light</span>';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i> <span>Dark</span>';
+    }
+    localStorage.setItem('theme', theme);
+  }
+  setTheme(currentTheme);
+
+  themeBtn.addEventListener('click', function() {
+    var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    setTheme(isLight ? 'dark' : 'light');
+  });
+
+  // Animate skill bar filling on Scroll
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.w + '%';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.fill').forEach(function(f) {
+    io.observe(f);
+  });
 })();
+
+// Filter Projects
+function filterProj(cat) {
+  var btns = document.querySelectorAll('.filter-btn');
+  btns.forEach(function(b) { b.classList.remove('active'); });
+  event.target.classList.add('active');
+
+  var cards = document.querySelectorAll('.proj-card');
+  cards.forEach(function(c) {
+    if (cat === 'all' || c.dataset.cat === cat) {
+      c.style.display = 'flex';
+    } else {
+      c.style.display = 'none';
+    }
+  });
+}
+
+// Contact Form Handler & Toast
+function submitForm(e) {
+  e.preventDefault();
+  var name = document.getElementById('name').value;
+  var toast = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = 'ขอบคุณครับคุณ ' + name + ' ส่งข้อความเรียบร้อยแล้ว';
+  toast.className = "show";
+  setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+  document.getElementById('contactForm').reset();
+}
 </script>
 </body>
 </html>
